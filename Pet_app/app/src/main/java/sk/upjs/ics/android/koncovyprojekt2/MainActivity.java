@@ -23,7 +23,6 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashSet;
 import java.util.Set;
 
 import static sk.upjs.ics.android.koncovyprojekt2.Defaults.DISMISS_ACTION;
@@ -47,17 +46,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         settings = getSharedPreferences("DATA", Context.MODE_PRIVATE);
-        meno = settings.getString("MENO", "");
-        priezvisko = settings.getString("PRIEZVISKO", "");
-        isPrvadavka = settings.getBoolean("ISPRVADAVKA", false);
-        datumPrvadavka = settings.getString("DATUMPRVADAVKA", "");
-        isDruhadavka = settings.getBoolean("ISDRUHADAVKA", false);
-        datumDruhadavka = settings.getString("DATUMDRUHADAVKA", "");
-        firma = settings.getString("FIRMA", "");
-        testySet = settings.getStringSet("TESTY", new HashSet<>());
-        testyDetailSet = settings.getStringSet("TESTYDETAIL", new HashSet<>());
-        testy = new ArrayList<>(testySet);
-        testyDetail = new ArrayList<>(testyDetailSet);
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -78,19 +66,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onStop() {
         super.onStop();
         SharedPreferences.Editor editor = settings.edit();
-        editor.putString("MENO", meno);
-        editor.putString("PRIEZVISKO", priezvisko);
-        editor.putBoolean("ISPRVADAVKA", isPrvadavka);
-        editor.putString("DATUMPRVADAVKA", datumPrvadavka);
-        editor.putBoolean("ISDRUHADAVKA", isDruhadavka);
-        editor.putString("DATUMDRUHADAVKA", datumDruhadavka);
-        editor.putString("FIRMA", firma);
-        testySet = new HashSet<>();
-        testySet.addAll(testy);
-        testyDetailSet = new HashSet<>();
-        testyDetailSet.addAll(testyDetail);
-        editor.putStringSet("TESTY", testySet);
-        editor.putStringSet("TESTYDETAIL", testyDetailSet);
         editor.apply();
     }
 
@@ -121,20 +96,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment selectedFragment;
         switch (item.getItemId()) {
-            case R.id.testy:
-                selectedFragment = new InfoFragment();
+            case R.id.mojveterinar:
+                selectedFragment = new Mojveterinar();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
-            case R.id.karantena:
-                selectedFragment = new Karantena();
+            case R.id.upozornenia:
+                selectedFragment = new Upozornenia();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
-            case R.id.telefon:
-                selectedFragment = new Kontakty();
+            case R.id.choroby:
+                selectedFragment = new Choroby();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
-            case R.id.qaa:
-                selectedFragment = new Otazky();
+            case R.id.prvapomoc:
+                selectedFragment = new Prvapomoc();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
             case R.id.info:

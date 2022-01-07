@@ -3,7 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/activity_main.xml" value="0.11930091185410334" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_card.xml" value="0.16077898550724637" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_favorites.xml" value="0.16077898550724637" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_home.xml" value="0.16077898550724637" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_info.xml" value="0.16077898550724637" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_info_o_nas.xml" value="0.259375" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_infoonas.xml" value="0.14685714285714285" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_kontakty.xml" value="0.16077898550724637" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_prvapomoc.xml" value="0.13385416666666666" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_upozornenia.xml" value="0.16077898550724637" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/menu/bottom_navigation.xml" value="0.259375" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/menu/menu_up.xml" value="0.259375" />
       </map>
     </option>
   </component>
