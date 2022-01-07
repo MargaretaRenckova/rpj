@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_main">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/testy"
+            android:icon="@drawable/doctor"
+            android:title="Môj veterinár" />
+
+        <item
+            android:id="@+id/telefon"
+            android:icon="@drawable/sms"
+            android:title="Upozornenia" />
+
+        <item
+            android:id="@+id/qaa"
+            android:icon="@drawable/covid"
+            android:title="Choroby" />
+
+        <item
+            android:id="@+id/karantena"
+            android:icon="@drawable/info"
+            android:title="Prvá pomoc" />
+
+        <item
+            android:id="@+id/info1"
+            android:icon="@drawable/info"
+            android:title="Informácie" />
+
+        <item
+            android:id="@+id/info2"
+            android:icon="@drawable/info"
+            android:title="Informácie" />
+
+    </group>
+
+</menu>

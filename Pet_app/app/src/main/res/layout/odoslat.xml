@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#22FFFFFF"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:text="MENO"
+        android:textColor="@color/siva2" />
+    <TextView
+        android:id="@+id/menoBuilder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:text="TELEFÓNNE ČÍSLO"
+        android:textColor="@color/siva2"
+        tools:ignore="HardcodedText" />
+    <TextView
+        android:id="@+id/cisloBuilder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:text="DÁTUM NARODENIA"
+        android:textColor="@color/siva2"
+        tools:ignore="HardcodedText" />
+    <TextView
+        android:id="@+id/datumnarodeniaBuilder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:text="RODNÉ ČÍSLO "
+        android:textColor="@color/siva2"
+        tools:ignore="HardcodedText" />
+    <TextView
+        android:id="@+id/rodnecisloBuilder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:text="COVID-19 PASS"
+        android:textColor="@color/siva2"
+        tools:ignore="HardcodedText" />
+    <TextView
+        android:id="@+id/passBuilder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+</LinearLayout>

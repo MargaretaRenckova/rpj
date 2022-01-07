@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FF018786</color>
+    <color name="purple_500">#FFFFFFFF</color>
+    <color name="purple_700">#c5570a</color>
+    <color name="teal_200">#fcba03</color>
+    <color name="teal_700">#25c242</color>
+    <color name="realblack">#FF000000</color>
+    <color name="black">#c5570a</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="siva">#595959</color>
+    <color name="siva2">#3C3F48</color>
+    <color name="zlta">#df9f3e</color>
+    <color name="bordova">#185a94</color>
+    <color name="slabasiva">#898989</color>
+    <color name="MainOranzova">#c5570a</color>
+</resources>

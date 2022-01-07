@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/forthicon"
+        android:title="" />
+
+    <item
+        android:id="@+id/nav_favorites"
+        android:icon="@drawable/firsticon"
+        android:title=""/>
+    <item
+        android:id="@+id/nav_card"
+        android:icon="@drawable/thirdicon"
+        android:title=""/>
+
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/secondicon"
+        android:title=""/>
+</menu>
