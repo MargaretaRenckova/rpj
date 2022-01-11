@@ -18,231 +18,450 @@
             android:padding="15dp">
 
             <ImageView
-                android:layout_width="350dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/petimage" />
-
-            <TextView
+                android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="25dp"
-                android:fontFamily="@font/montserrat_medium"
+                android:layout_height="286dp"
+                android:background="@drawable/back"
+                app:srcCompat="@drawable/luky" />sma
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Tu sa zobrazia informácií o tvojom  \n miláčikovi po zadaní"
-                android:textColor="#aaaaaa"
-                android:textSize="15dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                android:paddingLeft="40dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Meno"
-                    android:textColor="#000000"
-                    android:textSize="20dp"/>
+                    android:orientation="vertical">
 
-                <TextView
+                    <TextView
+                        android:id="@+id/meno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Meno"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="20dp"/>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/editTextTextPersonName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:inputType="textPersonName"
+                        android:text="Luky"
+                        android:textColor="@color/MainOranzova"
+                        android:textColorHint="#9A9797"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/MainOranzova" />
+                android:background="@android:color/darker_gray" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                android:paddingLeft="40dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Plemeno"
-                    android:textColor="#000000"
-                    android:textSize="20dp" />
+                    android:orientation="vertical">
 
-                <TextView
+                    <TextView
+                        android:id="@+id/plemeno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Plemeno"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="20dp" />
-            </LinearLayout>
+                    android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/MainOranzova" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Dátum narodenia"
-                    android:textColor="#000000"
-                    android:textSize="20dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="20dp"/>
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/MainOranzova" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Domov"
-                    android:textColor="#000000"
-                    android:textSize="20dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="20dp"/>
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/MainOranzova" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Majiteľ"
-                    android:textColor="#000000"
-                    android:textSize="20dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="20dp"/>
+                    <TextView
+                        android:id="@+id/plemenoE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:inputType="textPersonName"
+                        android:text="Cane Corso"
+                        android:textColor="@color/MainOranzova"
+                        android:textColorHint="#9A9797"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/MainOranzova" />
+                android:background="@android:color/darker_gray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                android:paddingLeft="40dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Pohlavie"
-                    android:textColor="#000000"
-                    android:textSize="20dp"/>
+                    android:orientation="vertical">
 
-                <TextView
+                    <TextView
+                        android:id="@+id/datumnarodenia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Dátum narodenia"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="20dp"/>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/datumnarodeniaE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:inputType="textPersonName"
+                        android:text="04.4.2021"
+                        android:textColor="@color/MainOranzova"
+                        android:textColorHint="#9A9797"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/MainOranzova" />
+                android:background="@android:color/darker_gray" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                android:paddingLeft="40dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Farba"
-                    android:textColor="#000000"
-                    android:textSize="20dp"/>
+                    android:orientation="vertical">
 
-                <TextView
+                    <TextView
+                        android:id="@+id/domov"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Domov"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="20dp"/>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/DomovE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:inputType="textPersonName"
+                        android:text="Lemešany 221"
+                        android:textColor="@color/MainOranzova"
+                        android:textColorHint="#9A9797"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/MainOranzova" />
+                android:background="@android:color/darker_gray" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:padding="10dp"
-                android:textSize="20dp">
+                android:paddingLeft="40dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="ID čipu"
-                    android:textColor="#000000"
-                    android:textSize="20dp"/>
+                    android:orientation="vertical">
 
-                <TextView
+                    <TextView
+                        android:id="@+id/majitel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Majiteľ"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="20dp"/>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/majitelE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:inputType="textPersonName"
+                        android:text="Natália Petrová"
+                        android:textColor="@color/MainOranzova"
+                        android:textColorHint="#9A9797"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="40dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Pohlavie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Pohlavie"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/pohlavieE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:inputType="textPersonName"
+                        android:text="M/F"
+                        android:textColor="@color/MainOranzova"
+                        android:textColorHint="#9A9797"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="40dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/farba"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Farba"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/farbaE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:inputType="textPersonName"
+                        android:text="sivá"
+                        android:textColor="@color/MainOranzova"
+                        android:textColorHint="#9A9797"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="40dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="ID čipu"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/chipE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="xxx xxx xxx"
+                        android:inputType="textPersonName"
+                        android:text="875 242 654 "
+                        android:textColor="@color/MainOranzova"
+                        android:textColorHint="#9A9797"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+
 
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
