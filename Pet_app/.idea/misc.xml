@@ -5,9 +5,11 @@
       <map>
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/back.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/calendar.xml" value="0.24814814814814815" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/layoutborder.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/ok.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/people.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/qanda.xml" value="0.24814814814814815" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/shadow.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/sms.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/telephone.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/test.xml" value="0.24814814814814815" />
@@ -27,7 +29,10 @@
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_prvapomoc.xml" value="0.13385416666666666" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_search.xml" value="0.16077898550724637" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_upozornenia.xml" value="0.16077898550724637" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/nav_header.xml" value="0.13385416666666666" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/note.xml" value="0.15443840579710144" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/odoslat.xml" value="0.16077898550724637" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/poznamka_dialog.xml" value="0.15443840579710144" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/veterinar.xml" value="0.16077898550724637" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/zmena.xml" value="0.16077898550724637" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/menu/bottom_navigation.xml" value="0.259375" />
@@ -35,6 +40,7 @@
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
