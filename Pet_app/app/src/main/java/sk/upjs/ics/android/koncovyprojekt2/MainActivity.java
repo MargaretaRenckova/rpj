@@ -8,9 +8,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +24,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Set;
@@ -28,6 +32,7 @@ import java.util.Set;
 import static sk.upjs.ics.android.koncovyprojekt2.Defaults.DISMISS_ACTION;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private String cisloCipu;
     private DrawerLayout drawer;
     public static SharedPreferences settings;
 
@@ -35,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         settings = getSharedPreferences("DATA", Context.MODE_PRIVATE);
+        cisloCipu = settings.getString("CISLOCIPU", "");
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -46,6 +52,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        if (cisloCipu.equals("")) {
+            AlertDialog.Builder builder= new AlertDialog.Builder(this);
+            final View customLayout = getLayoutInflater().inflate(R.layout.vstup, null);
+            builder.setView(customLayout);
+            builder.create();
+            final EditText cislo = customLayout.findViewById(R.id.vstupCisloCipu);
+            builder.setPositiveButton("OK", (dialog, which) -> {
+                if (cislo.getText().toString().equals("")) {
+                    Toast.makeText(this, "Nesprávne číslo čipu", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    SharedPreferences.Editor editor = settings.edit();
+                    editor.putString("CISLOCIPU", cislo.getText().toString());
+                    editor.apply();
+                }
+            });
+            builder.setNegativeButton("Zatvor", (dialog, which) -> {
+                Toast.makeText(this, "Používaš aplikáciu bez čísla čipu, informácie o zvierati sa nebudú zobrazovať", Toast.LENGTH_LONG).show();
+            });
+            builder.show();
+        }
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
         }
@@ -130,12 +157,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.item) {
-            upravProfil();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private void upravProfil() {
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable("Panda", cisloCipu);
     }
+
 }
