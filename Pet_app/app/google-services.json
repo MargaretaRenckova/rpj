@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "50267998411",
+    "firebase_url": "https://petapp-d0249-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "petapp-d0249",
+    "storage_bucket": "petapp-d0249.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50267998411:android:9268262521b6cf2124f34e",
+        "android_client_info": {
+          "package_name": "sk.upjs.ics.android.koncovyprojekt2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50267998411-6vjk45oi4j97v6gq0ts87ijkh6tupqd7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhQ_WS1gZrHvCWJH5hvDjkvx2WW6dHQaQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50267998411-6vjk45oi4j97v6gq0ts87ijkh6tupqd7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

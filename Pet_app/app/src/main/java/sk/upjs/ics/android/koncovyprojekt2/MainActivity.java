@@ -32,7 +32,7 @@ import java.util.Set;
 import static sk.upjs.ics.android.koncovyprojekt2.Defaults.DISMISS_ACTION;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private String cisloCipu;
+    private static String cisloCipu;
     private DrawerLayout drawer;
     public static SharedPreferences settings;
 
@@ -167,4 +167,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         outState.putSerializable("Panda", cisloCipu);
     }
 
+    protected static String getCisloCipu() {
+        return cisloCipu;
+    }
 }
