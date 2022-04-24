@@ -17,7 +17,7 @@
 
         <item
             android:id="@+id/choroby"
-            android:icon="@drawable/covid"
+            android:icon="@drawable/choroby"
             android:title="Choroby" />
 
         <item

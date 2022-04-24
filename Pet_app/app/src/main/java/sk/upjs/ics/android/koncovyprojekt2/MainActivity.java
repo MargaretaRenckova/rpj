@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         settings = getSharedPreferences("DATA", Context.MODE_PRIVATE);
         cisloCipu = settings.getString("CISLOCIPU", "");
+        settings.getString("IMG", "");
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -52,8 +53,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
         if (cisloCipu.equals("")) {
-            AlertDialog.Builder builder= new AlertDialog.Builder(this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
             final View customLayout = getLayoutInflater().inflate(R.layout.vstup, null);
             builder.setView(customLayout);
             builder.create();
@@ -61,11 +63,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             builder.setPositiveButton("OK", (dialog, which) -> {
                 if (cislo.getText().toString().equals("")) {
                     Toast.makeText(this, "Nesprávne číslo čipu", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
+                    cisloCipu = cislo.getText().toString();
                     SharedPreferences.Editor editor = settings.edit();
                     editor.putString("CISLOCIPU", cislo.getText().toString());
                     editor.apply();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
                 }
             });
             builder.setNegativeButton("Zatvor", (dialog, which) -> {
