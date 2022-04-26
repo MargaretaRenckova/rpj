@@ -84,8 +84,8 @@ public class SearchFragment extends Fragment {
     }
 
     private void createMsg() {
-        AsyncT asyncT = new AsyncT();
-        asyncT.sendPost();
+        // AsyncT asyncT = new AsyncT();
+        // asyncT.sendPost();
     }
 
 }

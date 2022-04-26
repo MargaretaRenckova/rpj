@@ -24,7 +24,7 @@
                 android:onClick="changelayout"
                 android:text="MvDr. Ján Mrkva "
                 android:textColor="#FFFFFF"
-                app:backgroundTint="@color/MainOranzova" />
+                app:backgroundTint="@color/orange" />
 
             <Button
                 android:id="@+id/vet2"
@@ -34,7 +34,7 @@
                 android:clickable="true"
                 android:text="MvDr. Ján Mrkva "
                 android:textColor="#FFFFFF"
-                app:backgroundTint="@color/MainOranzova" />
+                app:backgroundTint="@color/orange" />
 
             <Button
                 android:id="@+id/vet3"
@@ -44,7 +44,7 @@
                 android:clickable="true"
                 android:text="MvDr. Ján Mrkva "
                 android:textColor="#FFFFFF"
-                app:backgroundTint="@color/MainOranzova" />
+                app:backgroundTint="@color/orange" />
 
             
 

@@ -6,7 +6,6 @@ import static sk.upjs.ics.android.koncovyprojekt2.MainActivity.settings;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,7 +13,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -24,7 +22,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
-import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,7 +30,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
@@ -115,7 +111,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void selectImage() {
-        final CharSequence[] options = {"Vybrať obrázok z galérie", "Zrušiť"};
+        final CharSequence[] options = {"Vybrať obrázok z galérie", "Vymazať fotku", "Zrušiť"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this.getActivity());
         builder.setTitle("Pridaj si fotku miláčika!");
         builder.setItems(options, new DialogInterface.OnClickListener() {
@@ -125,6 +121,11 @@ public class HomeFragment extends Fragment {
                     Intent intent = new Intent(Intent.ACTION_PICK);
                     intent.setType("image/*");
                     startActivityForResult(intent, IMAGE_PICK_CODE);
+                } else if (options[item].equals("Vymazať fotku")){
+                    imageDog.setImageResource(R.drawable.dog);
+                    SharedPreferences.Editor editor = settings.edit();
+                    editor.putString("IMG", "");
+                    editor.apply();
                 } else if (options[item].equals("Zrušiť")) {
                     dialog.dismiss();
                 }
@@ -138,18 +139,15 @@ public class HomeFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == IMAGE_PICK_CODE) {
             imageDog.setImageURI(data.getData());
-            SharedPreferences.Editor editor = settings.edit();
-            editor.putInt("IMGWIDTH", imageDog.getWidth());
-            editor.putInt("IMGHEIGHT", imageDog.getHeight());
             imageDog.buildDrawingCache();
-            Bitmap bitmap = ((BitmapDrawable)imageDog.getDrawable()).getBitmap();
+            Bitmap bitmap = ((BitmapDrawable) imageDog.getDrawable()).getBitmap();
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
             byte[] image = stream.toByteArray();
             String img_str = Base64.encodeToString(image, 0);
+            SharedPreferences.Editor editor = settings.edit();
             editor.putString("IMG", img_str);
             editor.apply();
-
         }
     }
 }

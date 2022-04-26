@@ -12,7 +12,7 @@
         android:fontFamily="@font/montserrat_medium"
         android:gravity="center"
         android:text="MENO"
-        android:textColor="@color/siva2" />
+        android:textColor="@color/wellgray" />
     <TextView
         android:id="@+id/menoBuilder"
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
         android:fontFamily="@font/montserrat_medium"
         android:gravity="center"
         android:text="TELEFÓNNE ČÍSLO"
-        android:textColor="@color/siva2"
+        android:textColor="@color/wellgray"
         tools:ignore="HardcodedText" />
     <TextView
         android:id="@+id/cisloBuilder"
@@ -49,7 +49,7 @@
         android:fontFamily="@font/montserrat_medium"
         android:gravity="center"
         android:text="DÁTUM NARODENIA"
-        android:textColor="@color/siva2"
+        android:textColor="@color/wellgray"
         tools:ignore="HardcodedText" />
     <TextView
         android:id="@+id/datumnarodeniaBuilder"
@@ -68,7 +68,7 @@
         android:fontFamily="@font/montserrat_medium"
         android:gravity="center"
         android:text="RODNÉ ČÍSLO "
-        android:textColor="@color/siva2"
+        android:textColor="@color/wellgray"
         tools:ignore="HardcodedText" />
     <TextView
         android:id="@+id/rodnecisloBuilder"
@@ -87,7 +87,7 @@
         android:fontFamily="@font/montserrat_medium"
         android:gravity="center"
         android:text="COVID-19 PASS"
-        android:textColor="@color/siva2"
+        android:textColor="@color/wellgray"
         tools:ignore="HardcodedText" />
     <TextView
         android:id="@+id/passBuilder"

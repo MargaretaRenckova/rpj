@@ -6,12 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CalendarView;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,13 +18,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Set;
-
-import static sk.upjs.ics.android.koncovyprojekt2.Defaults.DISMISS_ACTION;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private static String cisloCipu;
@@ -97,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     selectedFragment = new HomeFragment();
                     break;
                 case R.id.nav_favorites:
-                    selectedFragment = new FavoritesFragment();
+                    selectedFragment = new OckovaniaFragment();
                     break;
                 case R.id.nav_search:
                     selectedFragment = new SearchFragment();
