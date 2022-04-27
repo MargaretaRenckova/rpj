@@ -1,22 +1,19 @@
 package sk.upjs.ics.android.koncovyprojekt2;
 
-
-import static android.content.ContentValues.TAG;
-
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
 import java.util.List;
 
-public class ListAdapter_ockovania extends ArrayAdapter<Ockovania> {
+public class ListAdapter_navstevy extends ArrayAdapter<Navstevy> {
     private Context activityContext;
-    private List<Ockovania> list;
+    private List<Navstevy> list;
 
-    public ListAdapter_ockovania(Context context, List<Ockovania> list) {
+    public ListAdapter_navstevy(Context context, List<Navstevy> list) {
         super(context, R.layout.list_item, list);
         this.activityContext = context;
         this.list = list;
@@ -25,22 +22,21 @@ public class ListAdapter_ockovania extends ArrayAdapter<Ockovania> {
     @Override
     public View getView(final int position, View view, ViewGroup viewGroup) {
 
-        final ViewHolder viewHolder;
+        final ListAdapter_navstevy.ViewHolder viewHolder;
 
         if (view == null) {
             view = LayoutInflater.from(activityContext).inflate(R.layout.list_item, null);
-            viewHolder = new ViewHolder();
+            viewHolder = new ListAdapter_navstevy.ViewHolder();
             viewHolder.date = view.findViewById(R.id.item1);
-            viewHolder.vaccine = view.findViewById(R.id.item2);
+            viewHolder.reason = view.findViewById(R.id.item2);
             viewHolder.next = view.findViewById(R.id.item3);
-
-            viewHolder.date.setText("Dátum očkovania: " + list.get(position).date);
-            viewHolder.vaccine.setText("Nasledujúce očkovanie: " + list.get(position).vaccine);
-            viewHolder.next.setText("Vakcína: " + list.get(position).next);
-
+            viewHolder.date.setText("Dátum: " + list.get(position).date);
+            viewHolder.reason.setText("Dôvod: " + list.get(position).reason);
+            if (!list.get(position).next.equals("null")) viewHolder.next.setText("Najbližšia kontrola: " + list.get(position).next);
+            else viewHolder.next.setVisibility(View.GONE);
             view.setTag(viewHolder);
         } else {
-            viewHolder = (ViewHolder) view.getTag();
+            viewHolder = (ListAdapter_navstevy.ViewHolder) view.getTag();
         }
 
         return view;
@@ -48,7 +44,7 @@ public class ListAdapter_ockovania extends ArrayAdapter<Ockovania> {
 
     private static class ViewHolder {
         TextView date;
-        TextView vaccine;
+        TextView reason;
         TextView next;
     }
 }

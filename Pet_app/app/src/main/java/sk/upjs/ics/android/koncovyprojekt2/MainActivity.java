@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     selectedFragment = new SearchFragment();
                     break;
                 case R.id.nav_card:
-                    selectedFragment = new CardFragment();
+                    selectedFragment = new NavstevyFragment();
                     break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();

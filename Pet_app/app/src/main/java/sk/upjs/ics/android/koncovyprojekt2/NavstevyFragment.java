@@ -24,18 +24,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
-public class OckovaniaFragment extends Fragment {
-    ListView listViewOckovania;
-    List<Ockovania> listOckovania = new ArrayList<>();
-    ListAdapter_ockovania adapter;
+public class NavstevyFragment extends Fragment {
+    ListView listViewNavstevy;
+    List<Navstevy> listNavstevy = new ArrayList<>();
+    ListAdapter_navstevy adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View frameLayout = inflater.inflate(R.layout.fragment_ockovania, container, false);
-        listViewOckovania = frameLayout.findViewById(R.id.listViewOckovania);
-        String ockovania_str = settings.getString("OCKOVANIA", "");
-        if (!ockovania_str.equals("")) obnovData();
+        View frameLayout = inflater.inflate(R.layout.fragment_navstevy, container, false);
+        listViewNavstevy = frameLayout.findViewById(R.id.listViewNavstevy);
+        String navstevy_str = settings.getString("NAVSTEVY", "");
+        if (!navstevy_str.equals("")) obnovData();
         downloadData();
         return frameLayout;
     }
@@ -43,21 +42,29 @@ public class OckovaniaFragment extends Fragment {
     private void downloadData() {
         if (MainActivity.getCisloCipu().equals("")) return;
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://petapp-d0249-default-rtdb.europe-west1.firebasedatabase.app");
-        DatabaseReference myRef = database.getReference().child("petid/" + MainActivity.getCisloCipu() + "/vaccination");
+        DatabaseReference myRef = database.getReference().child("petid/" + MainActivity.getCisloCipu() + "/visitation");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                listOckovania.clear();
+                listNavstevy.clear();
                 ArrayList<String> x = new ArrayList();
                 for (DataSnapshot keyNode : dataSnapshot.getChildren()) {
                     x.clear();
                     for (DataSnapshot keyNode1 : keyNode.getChildren()) {
-                        x.add(keyNode1.getValue().toString());
+                       x.add(keyNode1.getValue().toString());
                     }
-                    String string = x.get(0) + "#" + x.get(1) + "#" + x.get(2);
-                    listOckovania.add(new Ockovania(string));
+                    String string;
+                    if (x.size()==2) {
+                        x.add("null");
+                        string = x.get(0) + "#" + x.get(1) + "#" + x.get(2);
+                    }
+                    else {
+                        string = x.get(0) + "#" + x.get(2) + "#" + x.get(1);
+                    }
+
+                    listNavstevy.add(new Navstevy(string));
                 }
-                Collections.reverse(listOckovania);
+                Collections.reverse(listNavstevy);
                 ulozData();
                 setData();
             }
@@ -69,33 +76,32 @@ public class OckovaniaFragment extends Fragment {
     }
 
     private void ulozData() {
-        String ockovania_str = "";
-        for (int i = 0; i < listOckovania.size(); i++) {
-            if (i != 0) ockovania_str += "|";
-            ockovania_str += listOckovania.get(i).date + "#" + listOckovania.get(i).vaccine + "#" + listOckovania.get(i).next;
+        String navstevy_str = "";
+        for (int i = 0; i < listNavstevy.size(); i++) {
+            if (i != 0) navstevy_str += "|";
+            navstevy_str += listNavstevy.get(i).date + "#" + listNavstevy.get(i).reason + "#" + listNavstevy.get(i).next;
         }
         SharedPreferences.Editor editor = settings.edit();
-        editor.putString("OCKOVANIA", ockovania_str);
+        editor.putString("NAVSTEVY", navstevy_str);
         editor.apply();
     }
 
     private void obnovData() {
-        String ockovania_str = settings.getString("OCKOVANIA", "");
-        String[] x = ockovania_str.split("\\|");
+        String navstevy_str = settings.getString("NAVSTEVY", "");
+        String[] x = navstevy_str.split("\\|");
         for (int i = 0; i < x.length; i++) {
-            listOckovania.add(new Ockovania(x[i]));
+            listNavstevy.add(new Navstevy(x[i]));
         }
         setData();
     }
 
-    private void setData() {
+    private void setData(){
         try {
-            adapter = new ListAdapter_ockovania(getContext(), listOckovania);
-            listViewOckovania.setAdapter(adapter);
+            adapter = new ListAdapter_navstevy(getContext(), listNavstevy);
+            listViewNavstevy.setAdapter(adapter);
         }
         catch (NullPointerException e) {
             Log.w(TAG, "NullPointerExeption", e);
         }
-
     }
 }

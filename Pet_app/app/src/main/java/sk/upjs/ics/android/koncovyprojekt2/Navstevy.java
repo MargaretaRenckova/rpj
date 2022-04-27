@@ -1,14 +1,14 @@
 package sk.upjs.ics.android.koncovyprojekt2;
 
-public class Ockovania {
+public class Navstevy {
     String date;
-    String vaccine;
+    String reason;
     String next;
 
-    public Ockovania (String string) {
+    public Navstevy (String string) {
         String []x = string.split("#");
         date = x[0];
-        vaccine = x[1];
+        reason = x[1];
         next = x[2];
     }
 }
