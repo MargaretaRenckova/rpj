@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/poznamky"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:gravity="top|left"
+        android:hint="Tu si môžete zaznamenať svoje poznámky"
+        android:backgroundTint="#00FFFFFF"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"/>
+</LinearLayout>

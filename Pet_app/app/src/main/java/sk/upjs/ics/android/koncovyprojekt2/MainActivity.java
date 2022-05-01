@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     selectedFragment = new OckovaniaFragment();
                     break;
                 case R.id.nav_search:
-                    selectedFragment = new SearchFragment();
+                    selectedFragment = new PoznamkyFragment();
                     break;
                 case R.id.nav_card:
                     selectedFragment = new NavstevyFragment();
