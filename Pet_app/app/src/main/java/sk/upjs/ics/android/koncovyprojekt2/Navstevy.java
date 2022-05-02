@@ -5,10 +5,9 @@ public class Navstevy {
     String reason;
     String next;
 
-    public Navstevy (String string) {
-        String []x = string.split("#");
-        date = x[0];
-        reason = x[1];
-        next = x[2];
+    public Navstevy (String date, String reason, String next) {
+        this.date = date;
+        this.reason = reason;
+        this.next = next;
     }
 }

@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/add.xml" value="0.15" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/antigen.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/back.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/calendar.xml" value="0.24814814814814815" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/choroby.xml" value="0.15" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/circle.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/covid.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/fajka.xml" value="0.2755208333333333" />
@@ -23,6 +25,7 @@
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/people.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/qanda.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/refresh.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/round_shape_btn.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/shadow.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/sipkadole.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/sms.xml" value="0.24814814814814815" />
@@ -44,10 +47,12 @@
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_mojveterinar.xml" value="0.13385416666666666" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_navstevy.xml" value="0.1" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_ockovania.xml" value="0.2105978260869565" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_poznamky.xml" value="0.259375" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_prvapomoc.xml" value="0.13385416666666666" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_search.xml" value="0.16077898550724637" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_upozornenia.xml" value="0.16077898550724637" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/list_item.xml" value="0.259375" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/list_item_button.xml" value="0.259375" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/nav_header.xml" value="0.13385416666666666" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/note.xml" value="0.15443840579710144" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/odoslat.xml" value="0.16077898550724637" />

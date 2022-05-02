@@ -1,52 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Mojveterinar">
+    tools:context=".MojveterinarFragment">
 
-        <LinearLayout
-            android:layout_height="match_parent"
+        <ListView
+            android:id="@+id/listVeterinari"
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:paddingLeft="16dp"
-            android:paddingTop="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp">
-
-            <Button
-                android:id="@+id/vet1"
-                style="@style/Button.Color"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:clickable="true"
-                android:onClick="changelayout"
-                android:text="MvDr. Ján Mrkva "
-                android:textColor="#FFFFFF"
-                app:backgroundTint="@color/orange" />
-
-            <Button
-                android:id="@+id/vet2"
-                style="@style/Button.Color"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:clickable="true"
-                android:text="MvDr. Ján Mrkva "
-                android:textColor="#FFFFFF"
-                app:backgroundTint="@color/orange" />
-
-            <Button
-                android:id="@+id/vet3"
-                style="@style/Button.Color"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:clickable="true"
-                android:text="MvDr. Ján Mrkva "
-                android:textColor="#FFFFFF"
-                app:backgroundTint="@color/orange" />
-
-            
-
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/list_item_button"
+            android:divider="@color/white" />
 </FrameLayout>

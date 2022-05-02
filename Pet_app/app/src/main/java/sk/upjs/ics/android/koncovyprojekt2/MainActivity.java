@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Fragment selectedFragment;
         switch (item.getItemId()) {
             case R.id.mojveterinar:
-                selectedFragment = new Mojveterinar();
+                selectedFragment = new MojveterinarFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
             case R.id.upozornenia:
