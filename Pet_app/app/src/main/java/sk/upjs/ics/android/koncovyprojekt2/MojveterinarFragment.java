@@ -89,7 +89,7 @@ public class MojveterinarFragment extends Fragment {
 
     private void setData() {
         try {
-            adapter = new ListAdapter_mojveterinar(getContext(), listVeterinari);
+            adapter = new ListAdapter_mojveterinar(getContext(), listVeterinari, this.getActivity());
             listVeterinariView.setAdapter(adapter);
         }
         catch (NullPointerException e) {
