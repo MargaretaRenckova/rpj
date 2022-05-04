@@ -16,4 +16,16 @@ public class MojVeterinar {
         this.email = email;
         this.imageUrl = imageUrl;
     }
+
+    @Override
+    public String toString() {
+        return "MojVeterinar{" +
+                "firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                '}';
+    }
 }

@@ -26,7 +26,7 @@
     <style name="deltagothic">
         <item name="android:fontFamily">@font/delta_gothic</item>
     </style>
-    <style name="covidnazov">
+    <style name="pandanazov">
         <item name="android:fontFamily">@font/bauhhl</item>
     </style>
     <style name="montserrat_text">
@@ -37,7 +37,7 @@
         <item name="colorPrimary">@color/white</item>
     </style>
     <style name="DialogTheme" parent="ThemeOverlay.AppCompat.Dialog">
-        <item name="android:textColorPrimary">#61211E</item>
+        <item name="android:textColorPrimary">@color/black</item>
     </style>
     <style name="Button.Color" parent="ThemeOverlay.AppCompat">
         <item name="colorAccent">@color/orange</item>

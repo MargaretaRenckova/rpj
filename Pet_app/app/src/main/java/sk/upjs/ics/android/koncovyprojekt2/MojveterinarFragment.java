@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,7 +19,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 
@@ -82,7 +80,7 @@ public class MojveterinarFragment extends Fragment {
         String[] veterinar = veterinari_str.split("\\|");
         for (int i = 0; i < veterinar.length; i++) {
             String []x = veterinar[i].split("#");
-            listVeterinari.add(new MojVeterinar(x[0], x[1], x[2], x[3], x[4], x[5]));
+            listVeterinari.add(new MojVeterinar(x[2], x[4], x[0], x[5], x[1], x[3]));
         }
         setData();
     }

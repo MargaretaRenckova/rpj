@@ -30,7 +30,7 @@ public class ListAdapter_mojveterinar extends ArrayAdapter<MojVeterinar> {
         final ListAdapter_mojveterinar.ViewHolder viewHolder;
 
         if (view == null) {
-            view = LayoutInflater.from(activityContext).inflate(R.layout.list_item_button, null);
+            view = LayoutInflater.from(activityContext).inflate(R.layout.list_item_button, viewGroup, false);
             viewHolder = new ListAdapter_mojveterinar.ViewHolder();
             viewHolder.button = view.findViewById(R.id.button);
             viewHolder.button.setText("MVDr. " + list.get(position).firstname + " " + list.get(position).lastname);

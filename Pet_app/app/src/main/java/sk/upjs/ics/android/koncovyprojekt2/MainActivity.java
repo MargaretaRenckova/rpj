@@ -1,4 +1,5 @@
 package sk.upjs.ics.android.koncovyprojekt2;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,11 +21,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private static String cisloCipu;
+    private static MojVeterinar oblubenyVeterinar;
     private DrawerLayout drawer;
     public static SharedPreferences settings;
+    public NavigationView navigationView;
+    public BottomNavigationView bottomNav;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +39,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         cisloCipu = settings.getString("CISLOCIPU", "");
         settings.getString("IMG", "");
         setContentView(R.layout.activity_main);
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -64,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             });
             builder.show();
         }
+        if (settings.getString("OBLUBENY_VETERINAR", null)!=null) obnovOblubenehoVeterinara();
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
         }
@@ -83,15 +92,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             switch (item.getItemId()) {
                 case R.id.nav_home:
                     selectedFragment = new HomeFragment();
+                    if (!(navigationView.getCheckedItem() == null))navigationView.getCheckedItem().setChecked(false);
                     break;
                 case R.id.nav_favorites:
                     selectedFragment = new OckovaniaFragment();
+                    if (!(navigationView.getCheckedItem() == null))navigationView.getCheckedItem().setChecked(false);
                     break;
                 case R.id.nav_search:
                     selectedFragment = new PoznamkyFragment();
+                    if (!(navigationView.getCheckedItem() == null))navigationView.getCheckedItem().setChecked(false);
                     break;
                 case R.id.nav_card:
                     selectedFragment = new NavstevyFragment();
+                    if (!(navigationView.getCheckedItem() == null))navigationView.getCheckedItem().setChecked(false);
                     break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
@@ -125,6 +138,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
         }
+        item.setChecked(false);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -148,17 +162,65 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.doctor) {
-            return true;
+            if (oblubenyVeterinar==null) Toast.makeText(this, "Nezvolil si si obľúbeného veterinára", Toast.LENGTH_SHORT).show();
+            else zobrazDoktora();
         }
         return super.onOptionsItemSelected(item);
     }
 
+    private void zobrazDoktora() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.DialogTheme);
+        builder.setTitle("Obľúbený veterinár");
+        final View customLayout = getLayoutInflater().inflate(R.layout.veterinar_dialog, null);
+        builder.setView(customLayout);
+        builder.create();
+
+        TextView meno = customLayout.findViewById(R.id.menoapriezviskoDialog);
+        ImageView image = customLayout.findViewById(R.id.veterinarImageDialog);
+        TextView adresa = customLayout.findViewById(R.id.adresaDialog);
+        TextView telefon = customLayout.findViewById(R.id.telefonDialog);
+        TextView email = customLayout.findViewById(R.id.emailDialog);
+        meno.setText("MVDr. " + oblubenyVeterinar.firstname + " " + oblubenyVeterinar.lastname);
+        adresa.setText(oblubenyVeterinar.address);
+        telefon.setText(oblubenyVeterinar.phone);
+        email.setText(oblubenyVeterinar.email);
+        Picasso.get().load(getOblubenyVeterinar().imageUrl).into(image);
+        if (image.getDrawable()!=null) {
+            image.setBackgroundResource(R.drawable.layoutborder);
+            image.setPadding(8,8,8,8);
+        }
+        image.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                image.setBackgroundResource(R.drawable.layoutborder);
+                image.setPadding(8,8,8,8);
+            }
+        });
+
+        builder.setPositiveButton("OK", null);
+        builder.show();
+    }
+
+    private void obnovOblubenehoVeterinara() {
+        String veterinar_str = settings.getString("OBLUBENY_VETERINAR", null);
+        String []x = veterinar_str.split("#");
+        MojVeterinar mojVeterinar = new MojVeterinar(x[2], x[4], x[0], x[5], x[1], x[3]);
+        setOblubenyVeterinar(mojVeterinar);
+    }
+
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putSerializable("Panda", cisloCipu);
     }
 
     protected static String getCisloCipu() {
         return cisloCipu;
+    }
+
+    public static MojVeterinar getOblubenyVeterinar() {
+        return oblubenyVeterinar;
+    }
+
+    public static void setOblubenyVeterinar(MojVeterinar oblubenyVeterinar) {
+        MainActivity.oblubenyVeterinar = oblubenyVeterinar;
     }
 }

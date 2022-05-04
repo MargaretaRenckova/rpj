@@ -1,8 +1,12 @@
 package sk.upjs.ics.android.koncovyprojekt2;
 
+import static sk.upjs.ics.android.koncovyprojekt2.MainActivity.settings;
+
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
-import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -67,12 +71,37 @@ public class VeterinarFragment extends Fragment {
         menu.findItem(R.id.doctor).setVisible(false);
         menu.findItem(R.id.heart).setVisible(true);
         menu.findItem(R.id.arrow).setVisible(true);
+
+        try {
+            if (MainActivity.getOblubenyVeterinar().toString().equals(veterinar.toString())) menu.findItem(R.id.heart).setIcon(R.drawable.heart);
+            else menu.findItem(R.id.heart).setIcon(R.drawable.heart_line);
+        }
+        catch (NullPointerException e) {
+            menu.findItem(R.id.heart).setIcon(R.drawable.heart_line);
+        }
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.heart) {
-            item.setIcon(R.drawable.heart);
+            if (String.valueOf(item.getTitle()).equals("heart")) {
+                item.setIcon(R.drawable.heart_line);
+                item.setTitle("heart_line");
+                MainActivity.setOblubenyVeterinar(null);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("OBLUBENY_VETERINAR", null);
+                editor.apply();
+            }
+            else {
+                item.setIcon(R.drawable.heart);
+                item.setTitle("heart");
+                MainActivity.setOblubenyVeterinar(veterinar);
+                String veterinar_str = veterinar.firstname + "#" + veterinar.lastname + "#" + veterinar.address + "#" + veterinar.phone + "#" + veterinar.email + "#" + veterinar.imageUrl;
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("OBLUBENY_VETERINAR", veterinar_str);
+                editor.apply();
+            }
+
         }
         if (id == R.id.arrow) {
             MojveterinarFragment nextFrag= new MojveterinarFragment();
