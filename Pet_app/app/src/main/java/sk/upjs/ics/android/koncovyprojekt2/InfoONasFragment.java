@@ -5,19 +5,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Upozornenia extends Fragment {
-
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link InfoONasFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class InfoONasFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    public Upozornenia() {
-
+    public InfoONasFragment() {
+        // Required empty public constructor
     }
 
-    public static Upozornenia newInstance(String param1, String param2) {
-        Upozornenia fragment = new Upozornenia();
+
+    // TODO: Rename and change types and number of parameters
+    public static InfoONasFragment newInstance(String param1, String param2) {
+        InfoONasFragment fragment = new InfoONasFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -37,6 +45,6 @@ public class Upozornenia extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_upozornenia, container, false);
+        return inflater.inflate(R.layout.fragment_infoonas, container, false);
     }
 }

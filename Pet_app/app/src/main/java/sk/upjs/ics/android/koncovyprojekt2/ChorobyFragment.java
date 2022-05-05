@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class Choroby extends Fragment {
+public class ChorobyFragment extends Fragment {
     private TextView bratislava;
 
-    public Choroby() {
+    public ChorobyFragment() {
         // Required empty public constructor
     }
 

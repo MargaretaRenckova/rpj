@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".InfoONas">
+    tools:context=".InfoONasFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                 android:layout_gravity="center"
                 android:cropToPadding="true"
                 android:padding="50dp"
-                android:src="@drawable/dva" />
+                android:src="@drawable/appscreen" />
 
             <TextView
                 android:layout_width="match_parent"

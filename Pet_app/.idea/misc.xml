@@ -22,6 +22,8 @@
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/krivka_up.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/layoutborder.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/mask.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/navsteva.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/note.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/ok.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/people.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/drawable/qanda.xml" value="0.24814814814814815" />
@@ -53,6 +55,7 @@
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_search.xml" value="0.16077898550724637" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_upozornenia.xml" value="0.16077898550724637" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_veterinar.xml" value="0.259375" />
+        <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/fragment_zapis_navstevy.xml" value="0.264" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/list_item.xml" value="0.259375" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/list_item_button.xml" value="0.259375" />
         <entry key="..\:/Users/megy/Desktop/Skola/4_rocnik/Rocnikovy projekt/rpj/Pet_app/app/src/main/res/layout/nav_header.xml" value="0.13385416666666666" />

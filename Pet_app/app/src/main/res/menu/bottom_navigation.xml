@@ -3,20 +3,20 @@
 
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/forthicon"
+        android:icon="@drawable/dogicon"
         android:title="" />
 
     <item
-        android:id="@+id/nav_favorites"
-        android:icon="@drawable/firsticon"
+        android:id="@+id/nav_ockovania"
+        android:icon="@drawable/vaccine"
         android:title=""/>
     <item
-        android:id="@+id/nav_card"
-        android:icon="@drawable/thirdicon"
+        android:id="@+id/nav_navstevy"
+        android:icon="@drawable/calendar"
         android:title=""/>
 
     <item
-        android:id="@+id/nav_search"
-        android:icon="@drawable/secondicon"
+        android:id="@+id/nav_poznamky"
+        android:icon="@drawable/note"
         android:title=""/>
 </menu>

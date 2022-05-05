@@ -101,7 +101,6 @@ public class VeterinarFragment extends Fragment {
                 editor.putString("OBLUBENY_VETERINAR", veterinar_str);
                 editor.apply();
             }
-
         }
         if (id == R.id.arrow) {
             MojveterinarFragment nextFrag= new MojveterinarFragment();

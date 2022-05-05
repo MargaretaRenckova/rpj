@@ -11,27 +11,27 @@
             android:title="Môj veterinár"/>
 
         <item
-            android:id="@+id/upozornenia"
-            android:icon="@drawable/sms"
-            android:title="Upozornenia" />
-
-        <item
             android:id="@+id/choroby"
             android:icon="@drawable/choroby"
             android:title="Choroby" />
 
         <item
             android:id="@+id/prvapomoc"
-            android:icon="@drawable/info"
+            android:icon="@drawable/hospital"
             android:title="Prvá pomoc" />
 
         <item
-            android:id="@+id/info"
-            android:icon="@drawable/info"
-            android:title="Informácie" />
+            android:id="@+id/zapisNavstevy"
+            android:icon="@drawable/calendar"
+            android:title="Pridanie návštevy" />
 
         <item
-            android:id="@+id/info2"
+            android:id="@+id/zapisOckovania"
+            android:icon="@drawable/vaccine"
+            android:title="Pridanie očkovania" />
+
+        <item
+            android:id="@+id/info"
             android:icon="@drawable/info"
             android:title="Informácie" />
 

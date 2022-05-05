@@ -93,6 +93,5 @@ public class MojveterinarFragment extends Fragment {
         catch (NullPointerException e) {
             Log.w(TAG, "NullPointerExeption", e);
         }
-
     }
 }

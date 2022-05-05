@@ -94,16 +94,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     selectedFragment = new HomeFragment();
                     if (!(navigationView.getCheckedItem() == null))navigationView.getCheckedItem().setChecked(false);
                     break;
-                case R.id.nav_favorites:
+                case R.id.nav_ockovania:
                     selectedFragment = new OckovaniaFragment();
                     if (!(navigationView.getCheckedItem() == null))navigationView.getCheckedItem().setChecked(false);
                     break;
-                case R.id.nav_search:
-                    selectedFragment = new PoznamkyFragment();
+                case R.id.nav_navstevy:
+                    selectedFragment = new NavstevyFragment();
                     if (!(navigationView.getCheckedItem() == null))navigationView.getCheckedItem().setChecked(false);
                     break;
-                case R.id.nav_card:
-                    selectedFragment = new NavstevyFragment();
+                case R.id.nav_poznamky:
+                    selectedFragment = new PoznamkyFragment();
                     if (!(navigationView.getCheckedItem() == null))navigationView.getCheckedItem().setChecked(false);
                     break;
             }
@@ -120,20 +120,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 selectedFragment = new MojveterinarFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
-            case R.id.upozornenia:
-                selectedFragment = new Upozornenia();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
-                break;
             case R.id.choroby:
-                selectedFragment = new Choroby();
+                selectedFragment = new ChorobyFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
             case R.id.prvapomoc:
                 selectedFragment = new Prvapomoc();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
+            case R.id.zapisNavstevy:
+                selectedFragment = new ZapisNavstevyFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+                break;
+            case R.id.zapisOckovania:
+                selectedFragment = new ZapisOckovaniaFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+                break;
             case R.id.info:
-                selectedFragment = new InfoONas();
+                selectedFragment = new InfoONasFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
 
