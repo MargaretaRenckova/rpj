@@ -58,7 +58,7 @@ public class NavstevyFragment extends Fragment {
                         listNavstevy.add(new Navstevy(x.get(0), x.get(1), "null"));
                     }
                     else {
-                        listNavstevy.add(new Navstevy(x.get(0), x.get(2), x.get(1)));
+                        if (x.size()!=1) listNavstevy.add(new Navstevy(x.get(0), x.get(2), x.get(1)));
                     }
                 }
                 Collections.reverse(listNavstevy);

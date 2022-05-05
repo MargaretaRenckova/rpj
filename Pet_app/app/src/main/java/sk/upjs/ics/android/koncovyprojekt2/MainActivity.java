@@ -24,13 +24,12 @@ import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private static String cisloCipu;
+    private static String cisloCipu = null;
     private static MojVeterinar oblubenyVeterinar;
     private DrawerLayout drawer;
     public static SharedPreferences settings;
     public NavigationView navigationView;
     public BottomNavigationView bottomNav;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

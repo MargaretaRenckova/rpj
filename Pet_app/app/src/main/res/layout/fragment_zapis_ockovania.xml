@@ -1,14 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ZapisOckovaniaFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".ZapisOckovaniaFragment"
+    android:orientation="vertical"
+    android:padding="15dp">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="Zapísanie očkovania zvieraťa"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/orange"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:paddingBottom="15dp"/>
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="*"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#FF0000"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Dátum:"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:paddingRight="10dp"/>
+
+        <EditText
+            android:id="@+id/ockovaniaZapis_datum"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="1.1.2022"
+            android:importantForAutofill="no"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="*"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#FF0000"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Nasledujúce očkovanie:"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:paddingRight="10dp"/>
+
+        <EditText
+            android:id="@+id/ockovaniaZapis_nasledujuceOckovanie"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="1.1.2022"
+            android:importantForAutofill="no"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="*"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#FF0000"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Vakcína:"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:paddingRight="10dp"/>
+
+        <EditText
+            android:id="@+id/ockovaniaZapis_vakcina"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:importantForAutofill="no"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="*"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#FF0000"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="ID čipu:"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:paddingRight="10dp"/>
+
+        <EditText
+            android:id="@+id/ockovaniaZapis_id"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:importantForAutofill="no"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="*"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#FF0000"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Heslo:"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:paddingRight="10dp"/>
+
+        <EditText
+            android:id="@+id/ockovaniaZapis_heslo"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="textPassword" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="*"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#FF0000"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Pole označené hviečkou je povinné"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            android:paddingRight="10dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ockovaniaZapis_button"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingRight="50dp"
+        android:paddingLeft="50dp"
+        android:textSize="20dp"
+        android:text="Odošli"
+        android:layout_gravity="center"
+        style="@style/button"/>
+</LinearLayout>

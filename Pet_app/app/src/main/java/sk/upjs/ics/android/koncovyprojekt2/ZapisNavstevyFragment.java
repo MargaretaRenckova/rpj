@@ -17,23 +17,23 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.io.IOException;
 
 public class ZapisNavstevyFragment extends Fragment {
-    EditText ockovaniaZapis_datum;
-    EditText ockovaniaZapis_dovod;
-    EditText ockovaniaZapis_nasledujucaKontrola;
-    EditText ockovaniaZapis_id;
-    EditText ockovaniaZapis_heslo;
-    private Button ockovaniaZapis_button;
+    EditText navstevyZapis_datum;
+    EditText navstevyZapis_dovod;
+    EditText navstevyZapis_nasledujucaKontrola;
+    EditText navstevyZapis_id;
+    EditText navstevyZapis_heslo;
+    private Button navstevyZapis_button;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View frameLayout = inflater.inflate(R.layout.fragment_zapis_navstevy, container, false);
-        ockovaniaZapis_datum = frameLayout.findViewById(R.id.ockovaniaZapis_datum);
-        ockovaniaZapis_dovod = frameLayout.findViewById(R.id.ockovaniaZapis_dovod);
-        ockovaniaZapis_nasledujucaKontrola = frameLayout.findViewById(R.id.ockovaniaZapis_nasledujucaKontrola);
-        ockovaniaZapis_id = frameLayout.findViewById(R.id.ockovaniaZapis_id);
-        ockovaniaZapis_heslo = frameLayout.findViewById(R.id.ockovaniaZapis_heslo);
-        ockovaniaZapis_button = frameLayout.findViewById(R.id.ockovaniaZapis_button);
-        ockovaniaZapis_button.setOnClickListener(new View.OnClickListener() {
+        navstevyZapis_datum = frameLayout.findViewById(R.id.navstevyZapis_datum);
+        navstevyZapis_dovod = frameLayout.findViewById(R.id.navstevyZapis_dovod);
+        navstevyZapis_nasledujucaKontrola = frameLayout.findViewById(R.id.navstevyZapis_nasledujucaKontrola);
+        navstevyZapis_id = frameLayout.findViewById(R.id.navstevyZapis_id);
+        navstevyZapis_heslo = frameLayout.findViewById(R.id.navstevyZapis_heslo);
+        navstevyZapis_button = frameLayout.findViewById(R.id.navstevyZapis_button);
+        navstevyZapis_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 odosli();
@@ -43,12 +43,12 @@ public class ZapisNavstevyFragment extends Fragment {
     }
 
     private void odosli() {
-        String datum = ockovaniaZapis_datum.getText().toString();
+        String datum = navstevyZapis_datum.getText().toString();
         String x[];
-        String dovod = ockovaniaZapis_dovod.getText().toString();
-        String id = ockovaniaZapis_id.getText().toString();
-        String heslo = ockovaniaZapis_heslo.getText().toString();
-        String nasledujucaKontrola = ockovaniaZapis_nasledujucaKontrola.getText().toString();
+        String dovod = navstevyZapis_dovod.getText().toString();
+        String id = navstevyZapis_id.getText().toString();
+        String heslo = navstevyZapis_heslo.getText().toString();
+        String nasledujucaKontrola = navstevyZapis_nasledujucaKontrola.getText().toString();
         if (!(datum.matches("([0-9]{2}).([0-9]{2}).([0-9]{4})") || datum.matches("([0-9]).([0-9]).([0-9]{4})") || datum.matches("([0-9]{2}).([0-9]).([0-9]{4})") || datum.matches("([0-9]).([0-9]{2}).([0-9]{4})"))) {
             Toast.makeText(getActivity(), "Nesprávny formát dátumu", Toast.LENGTH_SHORT).show();
             return;
@@ -83,11 +83,11 @@ public class ZapisNavstevyFragment extends Fragment {
                 myRef = database.getReference(reference + "/next");
                 myRef.setValue(nasledujucaKontrola);
             }
-            ockovaniaZapis_datum.setText("");
-            ockovaniaZapis_dovod.setText("");
-            ockovaniaZapis_nasledujucaKontrola.setText("");
-            ockovaniaZapis_id.setText("");
-            ockovaniaZapis_heslo.setText("");
+            navstevyZapis_datum.setText("");
+            navstevyZapis_dovod.setText("");
+            navstevyZapis_nasledujucaKontrola.setText("");
+            navstevyZapis_id.setText("");
+            navstevyZapis_heslo.setText("");
         }
         else Toast.makeText(getActivity(), "Nemáš pripojenie k internetu", Toast.LENGTH_SHORT).show();
     }
