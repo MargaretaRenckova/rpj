@@ -41,7 +41,7 @@ public class NavstevyFragment extends Fragment {
     }
 
     private void downloadData() {
-        if (MainActivity.getCisloCipu().equals("")) return;
+        if (MainActivity.getCisloCipu().equals("")) return;             // stahuju sa navstevy zvierata podla jeho cisla cipu
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://petapp-d0249-default-rtdb.europe-west1.firebasedatabase.app");
         DatabaseReference myRef = database.getReference().child("petid/" + MainActivity.getCisloCipu() + "/visitation");
         myRef.addValueEventListener(new ValueEventListener() {
@@ -72,8 +72,8 @@ public class NavstevyFragment extends Fragment {
         });
     }
 
-    private void ulozData() {
-        String navstevy_str = "";
+    private void ulozData() {                   // ukladanie dat do SharedPreferences
+        String navstevy_str = "";               // ukladanie vo formate "data#data#data|data#data#data|data#data#data", podla tohto formatu sa data obnovuju
         for (int i = 0; i < listNavstevy.size(); i++) {
             if (i != 0) navstevy_str += "|";
             navstevy_str += listNavstevy.get(i).date + "#" + listNavstevy.get(i).reason + "#" + listNavstevy.get(i).next;
@@ -83,7 +83,7 @@ public class NavstevyFragment extends Fragment {
         editor.apply();
     }
 
-    private void obnovData() {
+    private void obnovData() {                  // obnovovanie dat zo SharedPreferences
         String navstevy_str = settings.getString("NAVSTEVY", "");
         String[] navsteva = navstevy_str.split("\\|");
         for (int i = 0; i < navsteva.length; i++) {
@@ -93,7 +93,7 @@ public class NavstevyFragment extends Fragment {
         setData();
     }
 
-    private void setData(){
+    private void setData(){                    // nastavenie adaptera pre zobrazenie v liste
         try {
             adapter = new ListAdapter_navstevy(getContext(), listNavstevy);
             listViewNavstevy.setAdapter(adapter);

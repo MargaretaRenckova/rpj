@@ -1,6 +1,6 @@
 package sk.upjs.ics.android.koncovyprojekt2;
 
-public class MojVeterinar {
+public class MojVeterinar {                                     // objekt vytvoreny pre lepsiu pracu s datami
     String firstname;
     String lastname;
     String address;

@@ -1,6 +1,6 @@
 package sk.upjs.ics.android.koncovyprojekt2;
 
-public class Ockovania {
+public class Ockovania {            // objekt vytvoreny pre lepsiu pracu s datami
     String date;
     String vaccine;
     String next;

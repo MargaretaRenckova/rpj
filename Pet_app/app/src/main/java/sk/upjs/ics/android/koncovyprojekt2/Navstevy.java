@@ -1,6 +1,6 @@
 package sk.upjs.ics.android.koncovyprojekt2;
 
-public class Navstevy {
+public class Navstevy {                 // objekt vytvoreny pre lepsiu pracu s datami
     String date;
     String reason;
     String next;

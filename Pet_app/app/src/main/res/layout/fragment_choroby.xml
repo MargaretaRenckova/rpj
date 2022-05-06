@@ -31,7 +31,8 @@
                     style="@style/nadpisH2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Vírusové infekčné ochorenie, ktoré spôsobuje zápal žalúdka, čriev, pľúc, a nervovj sústavy a často končí úhynom. Najčastejšie bývajú napadnuté šteňatá a mladé psy do jedného roku. Nevyhýba sa však ani psom starším." />
+                    android:text="Vírusové infekčné ochorenie, ktoré spôsobuje zápal žalúdka, čriev, pľúc, a nervovj sústavy a často končí úhynom. Najčastejšie bývajú napadnuté šteňatá a mladé psy do jedného roku. Nevyhýba sa však ani psom starším."
+                    android:paddingBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tv2"
@@ -49,7 +50,8 @@
                     android:text="Parvoviróza je spôsobená vysoko nákazlivým a vysoko rezistentným DNA vírusom CPV (psí parvovírus).
  Hlavne mladé umierajú na dehydratáciu alebo intoxikáciu spôsobenú ťažkým zvracaním, horúčkou (až 41,5°C) a krvavou hnačkou.
  Ale aj v prípade, že zviera ochorenie prežije, často umiera o niekoľko rokov neskôr na následky parvovirózy kvôli slabej
-imunite organizmu alebo srdcovým problémom.  " />
+imunite organizmu alebo srdcovým problémom.  "
+                    android:paddingBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tv3"
@@ -64,7 +66,8 @@ imunite organizmu alebo srdcovým problémom.  " />
                     style="@style/nadpisH2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Koronaviróza je akútne knačkové ochorenie vírusového pôvod, ktoré sa vyskytuje prevažne u mladých psov (do jedného roku) . " />
+                    android:text="Koronaviróza je akútne knačkové ochorenie vírusového pôvod, ktoré sa vyskytuje prevažne u mladých psov (do jedného roku) . "
+                    android:paddingBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tv4"
@@ -79,7 +82,8 @@ imunite organizmu alebo srdcovým problémom.  " />
                     style="@style/nadpisH2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Infekčný zápal pečene, čiže infekčná hepatitída je prudké vírusové ochorenie. Napáda psov v kažom veku. " />
+                    android:text="Infekčný zápal pečene, čiže infekčná hepatitída je prudké vírusové ochorenie. Napáda psov v kažom veku. "
+                    android:paddingBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tv5"
@@ -94,7 +98,8 @@ imunite organizmu alebo srdcovým problémom.  " />
                     style="@style/nadpisH2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Leptospiróza je bakteriálne infekčné ochorenie, vyvolané niekoľkými druhmi leptospír, z ktorých niektoré druhy sú prenosné aj na človeka. Napáda pečeň alebo obličky.  " />
+                    android:text="Leptospiróza je bakteriálne infekčné ochorenie, vyvolané niekoľkými druhmi leptospír, z ktorých niektoré druhy sú prenosné aj na človeka. Napáda pečeň alebo obličky.  "
+                    android:paddingBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tv6"
@@ -109,7 +114,8 @@ imunite organizmu alebo srdcovým problémom.  " />
                     style="@style/nadpisH2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Besnota je akútne vírusové infekčné ochorenie, ktoré je zo zvierat prenosné aj na človeka.  Toto ochorenie postihuje predovšetkým centrálnu nervovú sústavu a je smrteľné. Povinnosť  vakcinovať mäsožravce proti besnote je daná zákonom. " />
+                    android:text="Besnota je akútne vírusové infekčné ochorenie, ktoré je zo zvierat prenosné aj na človeka.  Toto ochorenie postihuje predovšetkým centrálnu nervovú sústavu a je smrteľné. Povinnosť  vakcinovať mäsožravce proti besnote je daná zákonom. "
+                    android:paddingBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tv7"
@@ -124,7 +130,8 @@ imunite organizmu alebo srdcovým problémom.  " />
                     style="@style/nadpisH2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Herpesviróza je akútne vírusové ochorenie, ktoré spôsobuje u novorodených šteniat náhle úhyny a u dospelých jedincov ochorenie horných dýchacích ciest, pohlavných orgánov alebo oka. " />
+                    android:text="Herpesviróza je akútne vírusové ochorenie, ktoré spôsobuje u novorodených šteniat náhle úhyny a u dospelých jedincov ochorenie horných dýchacích ciest, pohlavných orgánov alebo oka. "
+                    android:paddingBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tv8"

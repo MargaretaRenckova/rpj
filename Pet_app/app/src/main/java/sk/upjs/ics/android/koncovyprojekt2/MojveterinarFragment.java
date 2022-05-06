@@ -39,7 +39,6 @@ public class MojveterinarFragment extends Fragment {
     }
 
     private void downloadData() {
-        if (MainActivity.getCisloCipu().equals("")) return;
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://petapp-d0249-default-rtdb.europe-west1.firebasedatabase.app");
         DatabaseReference myRef = database.getReference().child("veterinarians");
         myRef.addValueEventListener(new ValueEventListener() {

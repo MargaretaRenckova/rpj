@@ -54,20 +54,20 @@ public class HomeFragment extends Fragment {
         owner = frameLayout.findViewById(R.id.owner);
         id = frameLayout.findViewById(R.id.id);
         imageDog = frameLayout.findViewById(R.id.imageDog);
-        String img_str = settings.getString("IMG", "");
+        String img_str = settings.getString("IMG", "");                     // obnovovanie obrazka zo SharedPreferences, zakodovany v stringu
         if (!img_str.equals("")) {
             byte[] imageAsBytes = Base64.decode(img_str.getBytes(), Base64.DEFAULT);
             Bitmap bitmap = BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
             Drawable d = new BitmapDrawable(getResources(), bitmap);
             imageDog.setImageDrawable(d);
         }
-        imageDog.setOnClickListener(new View.OnClickListener() {
+        imageDog.setOnClickListener(new View.OnClickListener() {                        // listener - po kliknuti na obrazok sa zavola metoda, ktora zabezpeci vyber obrazku alebo jeho vymazanie
             @Override
             public void onClick(View v) {
                 selectImage();
             }
         });
-        downloadData();
+        downloadData();                                                                 // stiahnu sa data a nastavia resp. zobrazia
         setData();
         return frameLayout;
     }
@@ -83,7 +83,7 @@ public class HomeFragment extends Fragment {
         id.setText(MainActivity.getCisloCipu());
     }
 
-    private void downloadData() {
+    private void downloadData() {                                       // metoda sa vykonava len ak mame cislo cipu, stiahnu sa aktualne data o zvierati
         if (MainActivity.getCisloCipu().equals("")) return;
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://petapp-d0249-default-rtdb.europe-west1.firebasedatabase.app");
         DatabaseReference myRef = database.getReference().child("petid/" + MainActivity.getCisloCipu());
@@ -137,7 +137,7 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {          // ak sa obrazok vyberie a akcia je uspesna tak sa prekoduje do stringu a ulozi
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == IMAGE_PICK_CODE) {
             imageDog.setImageURI(data.getData());

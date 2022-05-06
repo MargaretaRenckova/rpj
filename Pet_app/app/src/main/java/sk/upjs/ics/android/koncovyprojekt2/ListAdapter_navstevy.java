@@ -33,7 +33,7 @@ public class ListAdapter_navstevy extends ArrayAdapter<Navstevy> {
             viewHolder.date.setText("Dátum: " + list.get(position).date);
             viewHolder.reason.setText("Dôvod: " + list.get(position).reason);
             if (!list.get(position).next.equals("null")) viewHolder.next.setText("Najbližšia kontrola: " + list.get(position).next);
-            else viewHolder.next.setVisibility(View.GONE);
+            else viewHolder.next.setVisibility(View.GONE);          // nie vzdy je uvedena aj dalsia kontrola zvierata, ak teda nie je uvedena, tak sa nezobrazi ani pole na tuto informaciu urcene
             view.setTag(viewHolder);
         } else {
             viewHolder = (ListAdapter_navstevy.ViewHolder) view.getTag();

@@ -52,7 +52,7 @@
     <style name="nadpisH2">
         <item name="android:fontFamily">@font/montserrat_medium</item>
         <item name="android:textColor">@color/wellgray</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:paddingBottom">10dp</item>
         <item name="android:justificationMode" tools:targetApi="o">inter_word</item>
     </style>

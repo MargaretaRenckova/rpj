@@ -42,7 +42,7 @@ public class ZapisNavstevyFragment extends Fragment {
         return frameLayout;
     }
 
-    private void odosli() {
+    private void odosli() {                                             // pred samotnym odoslanim dat do databazy sa kontroluje ich format a takisto aj heslo
         String datum = navstevyZapis_datum.getText().toString();
         String x[];
         String dovod = navstevyZapis_dovod.getText().toString();
@@ -70,7 +70,7 @@ public class ZapisNavstevyFragment extends Fragment {
         if (x[0].length() == 1) x[0] = "0" + x[0];
         if (x[1].length() == 1) x[1] = "0" + x[1];
 
-        if (isOnline()) {
+        if (isOnline()) {                   // ak sme online data sa zapisu
             FirebaseDatabase database = FirebaseDatabase.getInstance("https://petapp-d0249-default-rtdb.europe-west1.firebasedatabase.app");
             String reference = "petid/" + id + "/visitation/" + x[2] + x[1] + x[0];
             DatabaseReference myRef = database.getReference(reference + "/date");
@@ -92,7 +92,7 @@ public class ZapisNavstevyFragment extends Fragment {
         else Toast.makeText(getActivity(), "Nemáš pripojenie k internetu", Toast.LENGTH_SHORT).show();
     }
 
-    public boolean isOnline(){
+    public boolean isOnline(){                      // pripojenie k internetu zabezpecovanie pomocou pingu, ak je uspesny vrati true inak false
         Runtime runtime = Runtime.getRuntime();
         try {
             Process ipProcess = runtime.exec("/system/bin/ping -c 1 8.8.8.8");

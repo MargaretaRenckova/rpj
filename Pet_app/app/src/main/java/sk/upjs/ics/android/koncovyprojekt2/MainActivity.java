@@ -24,7 +24,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private static String cisloCipu = null;
+    private static String cisloCipu;
     private static MojVeterinar oblubenyVeterinar;
     private DrawerLayout drawer;
     public static SharedPreferences settings;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public BottomNavigationView bottomNav;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {                            // data sú obnovovane zo SharedPreferences
         super.onCreate(savedInstanceState);
         settings = getSharedPreferences("DATA", Context.MODE_PRIVATE);
         cisloCipu = settings.getString("CISLOCIPU", "");
@@ -45,11 +45,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View hView = navigationView.getHeaderView(0);
+        TextView cisloCipu_Drawer = hView.findViewById(R.id.cisloCipu_Drawer);
+        if (cisloCipu.equals("")) cisloCipu_Drawer.setText("ID čipu nezadané");     // ak je zadane aj ID cipu zobrazi sa v drawer menu
+        else cisloCipu_Drawer.setText("ID čipu: " + cisloCipu);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        if (cisloCipu.equals("")) {
+        if (cisloCipu.equals("")) {                                                 // ak este nie je zadané ID cipu, tak pri kazdom novom spustení to bude od pouzivatela pozadovat, nie je to ale povinne
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             final View customLayout = getLayoutInflater().inflate(R.layout.vstup, null);
             builder.setView(customLayout);
@@ -64,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     editor.putString("CISLOCIPU", cislo.getText().toString());
                     editor.apply();
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                    cisloCipu_Drawer.setText("ID čipu: " + cisloCipu);
                 }
             });
             builder.setNegativeButton("Zatvor", (dialog, which) -> {
@@ -71,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             });
             builder.show();
         }
-        if (settings.getString("OBLUBENY_VETERINAR", null)!=null) obnovOblubenehoVeterinara();
+        if (settings.getString("OBLUBENY_VETERINAR", null)!=null) obnovOblubenehoVeterinara();  // ak uz oblúbeny veterinar bol zvoleny nastavíme jeho zobrazenie
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
         }
@@ -166,12 +171,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         if (id == R.id.doctor) {
             if (oblubenyVeterinar==null) Toast.makeText(this, "Nezvolil si si obľúbeného veterinára", Toast.LENGTH_SHORT).show();
-            else zobrazDoktora();
+            else zobrazDoktora();                                   // nastavenie akcie po kliknuti na toolbar item - ak oblubeny veterinar nebol zvoleny vypise toast inak sa zobrazi
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private void zobrazDoktora() {
+    private void zobrazDoktora() {                                                  // spusti sa alert dialog, kde sa zobrazia potrebne informacie o oblubenom veterinarovi
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.DialogTheme);
         builder.setTitle("Obľúbený veterinár");
         final View customLayout = getLayoutInflater().inflate(R.layout.veterinar_dialog, null);
@@ -187,8 +192,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         adresa.setText(oblubenyVeterinar.address);
         telefon.setText(oblubenyVeterinar.phone);
         email.setText(oblubenyVeterinar.email);
-        Picasso.get().load(getOblubenyVeterinar().imageUrl).into(image);
-        if (image.getDrawable()!=null) {
+        Picasso.get().load(getOblubenyVeterinar().imageUrl).into(image);        // kniznica zabezpecuje zobrazenie obrazka z adresy URL
+        if (image.getDrawable()!=null) {                                        // tento if aj nasledujuci listener zabezpecuje korektne zobrazenie ramceku okolo obrazka
             image.setBackgroundResource(R.drawable.layoutborder);
             image.setPadding(8,8,8,8);
         }
@@ -204,7 +209,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         builder.show();
     }
 
-    private void obnovOblubenehoVeterinara() {
+    private void obnovOblubenehoVeterinara() {                                                  // obnovovanie udajov o veterinarovi zo SharedPreferences a nasledne vytvorenie objektu
         String veterinar_str = settings.getString("OBLUBENY_VETERINAR", null);
         String []x = veterinar_str.split("#");
         MojVeterinar mojVeterinar = new MojVeterinar(x[2], x[4], x[0], x[5], x[1], x[3]);
@@ -215,7 +220,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onSaveInstanceState(outState);
     }
 
-    protected static String getCisloCipu() {
+    protected static String getCisloCipu() {                                            // potrebne gettery a settery
         return cisloCipu;
     }
 

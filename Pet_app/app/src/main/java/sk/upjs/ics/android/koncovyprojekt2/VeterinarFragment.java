@@ -51,8 +51,8 @@ public class VeterinarFragment extends Fragment {
         adresa.setText(veterinar.address);
         telefon.setText(veterinar.phone);
         email.setText(veterinar.email);
-        Picasso.get().load(veterinar.imageUrl).into(image);
-        if (image.getDrawable()!=null) {
+        Picasso.get().load(veterinar.imageUrl).into(image);                 // kniznica zabezpecuje zobrazenie obrazka z adresy URL
+        if (image.getDrawable()!=null) {                                    // tento if aj nasledujuci listener zabezpecuje korektne zobrazenie ramceku okolo obrazka
             image.setBackgroundResource(R.drawable.layoutborder);
             image.setPadding(8,8,8,8);
         }
@@ -66,13 +66,13 @@ public class VeterinarFragment extends Fragment {
         return frameLayout;
     }
 
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {     // nastavenie ikon v hornom menu (doktor - skryty, sipka a srdiecko - zobrazene)
         super.onCreateOptionsMenu(menu, inflater);
         menu.findItem(R.id.doctor).setVisible(false);
         menu.findItem(R.id.heart).setVisible(true);
         menu.findItem(R.id.arrow).setVisible(true);
 
-        try {
+        try {                                                                // nastavenie pre srdiecko, ktor urcuje oblubeneho veterinara
             if (MainActivity.getOblubenyVeterinar().toString().equals(veterinar.toString())) menu.findItem(R.id.heart).setIcon(R.drawable.heart);
             else menu.findItem(R.id.heart).setIcon(R.drawable.heart_line);
         }
@@ -83,9 +83,9 @@ public class VeterinarFragment extends Fragment {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.heart) {
-            if (String.valueOf(item.getTitle()).equals("heart")) {
-                item.setIcon(R.drawable.heart_line);
+        if (id == R.id.heart) {                                                    // po kliknuti na ikonu doktora sa veterinar zvoli ako oblubeny
+            if (String.valueOf(item.getTitle()).equals("heart")) {                 // po opatovnom kliknuti sa oblubeny veterinar nastavi na null
+                item.setIcon(R.drawable.heart_line);                               // oblubeny moze byt stale len jeden veterinar
                 item.setTitle("heart_line");
                 MainActivity.setOblubenyVeterinar(null);
                 SharedPreferences.Editor editor = settings.edit();
@@ -102,7 +102,7 @@ public class VeterinarFragment extends Fragment {
                 editor.apply();
             }
         }
-        if (id == R.id.arrow) {
+        if (id == R.id.arrow) {                                                     // po kliknuti na sipku sa vrati na predchadzajuci fragment
             MojveterinarFragment nextFrag= new MojveterinarFragment();
             getActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, nextFrag)

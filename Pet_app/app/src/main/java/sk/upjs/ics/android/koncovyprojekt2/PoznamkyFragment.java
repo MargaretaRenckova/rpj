@@ -18,7 +18,7 @@ public class PoznamkyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View frameLayout = inflater.inflate(R.layout.fragment_poznamky, container, false);
         poznamky = frameLayout.findViewById(R.id.poznamky);
-        poznamky.setText(settings.getString("POZNAMKY", ""));
+        poznamky.setText(settings.getString("POZNAMKY", ""));       // nacitanie obsahu poznamok
         return frameLayout;
     }
 
@@ -26,7 +26,7 @@ public class PoznamkyFragment extends Fragment {
     public void onStop() {
         super.onStop();
         SharedPreferences.Editor editor = settings.edit();
-        editor.putString("POZNAMKY", poznamky.getText().toString());
+        editor.putString("POZNAMKY", poznamky.getText().toString());            // ukladanie obsahu poznamok
         editor.apply();
 
     }
